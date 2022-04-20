@@ -1,1 +1,55 @@
-<p>create-employee works!</p>
+ <div class="row">
+    <h1 class="text-center text-primary mt-5">Create new employee</h1>
+    <form  class="offset-md-2 col-md-8 my-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Type your first name here">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Type your last name here">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Type your e-mail here">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Type your password here">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="age" placeholder="Type your age here">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary:</label>
+                    <input type="text" class="form-control" id="salary" placeholder="Type your salary here">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary mb-3" routerLink="/list">
+                <i class="fa fa-arrow-left"></i> Back
+            </button>
+            <button type="submit" class="btn btn-success">
+               <i class="fa fa-save"></i> Add Employee
+            </button>
+        </div>
+    </form>
+</div>
