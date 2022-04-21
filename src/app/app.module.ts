@@ -9,6 +9,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { Page404Component } from './components/page404/page404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
