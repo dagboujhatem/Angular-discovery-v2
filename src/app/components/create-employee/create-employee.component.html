@@ -33,7 +33,7 @@
                         E-mail is required.
                     </div>
                     <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('email')?.hasError('email')">
-                        E-mail must contain @ char.
+                        E-mail must be a valid e-mail address.
                     </div>
                 </div>
             </div>
@@ -58,10 +58,10 @@
                         Age is required.
                     </div>
                     <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('age')?.hasError('min')">
-                        Age must be >= 18.
+                        Age must be geater than or egal 18.
                     </div>
                     <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('age')?.hasError('max')">
-                        Age must be < = 100.
+                        Age must be less than or egal 100.
                     </div>
                 </div>
             </div>
