@@ -14,34 +14,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <td>Hatem</td>
-                <td>Dagbouj</td>
-                <td>hatem@gmail.com</td>
-                <td>37</td>
-                <td>2500</td>
+              <tr *ngFor="let employee of employees">
+                <th>{{ employee?.id }}</th>
+                <td>{{ employee?.firstName }}</td>
+                <td>{{ employee?.lastName }}</td>
+                <td>{{ employee?.email }}</td>
+                <td>{{ employee?.age }}</td>
+                <td>{{ employee?.salary }}</td>
                 <td>
-                    <button class="btn btn-info text-white me-1">
+                    <button class="btn btn-info text-white me-1" [routerLink]="['/update', employee?.id]">
                       <i class="fa fa-edit"></i> Update
                     </button>
-                    <button class="btn btn-danger">
-                      <i class="fa fa-trash"></i> Delete
-                    </button>
-                </td>
-              </tr>
-              <tr>
-                <th>1</th>
-                <td>Hatem</td>
-                <td>Dagbouj</td>
-                <td>hatem@gmail.com</td>
-                <td>37</td>
-                <td>2500</td>
-                <td>
-                    <button class="btn btn-info text-white me-1">
-                      <i class="fa fa-edit"></i> Update
-                    </button>
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger" (click)="deleteEmployee(employee?.id )">
                       <i class="fa fa-trash"></i> Delete
                     </button>
                 </td>
