@@ -1,17 +1,25 @@
 <div class="row">
     <h1 class="text-center text-primary mt-5">Update employee</h1>
-    <form  class="offset-md-2 col-md-8 my-5">
+    <form *ngIf="employeeForm" [formGroup]="employeeForm" (ngSubmit)="updateEmployeeByID()" class="offset-md-2 col-md-8 my-5">
         <div class="row">
             <div class="col-6">
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Type your first name here">
+                    <input type="text" class="form-control" id="firstName" placeholder="Type your first name here"
+                    formControlName="firstName" [ngClass]="{'is-valid': submitted && !employeeForm.get('firstName')?.errors, 'is-invalid': submitted && employeeForm.get('firstName')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('firstName')?.hasError('required')">
+                        First name is required.
+                    </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Type your last name here">
+                    <input type="text" class="form-control" id="lastName" placeholder="Type your last name here" 
+                    formControlName="lastName"  [ngClass]="{'is-valid': submitted &&  !employeeForm.get('lastName')?.errors, 'is-invalid': submitted && employeeForm.get('lastName')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('lastName')?.hasError('required')">
+                        Last name is required.
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,13 +27,24 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Type your e-mail here">
+                    <input type="email" class="form-control" id="email" placeholder="Type your e-mail here"
+                    formControlName="email"  [ngClass]="{'is-valid': submitted && !employeeForm.get('email')?.errors, 'is-invalid': submitted && employeeForm.get('email')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('email')?.hasError('required')">
+                        E-mail is required.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('email')?.hasError('email')">
+                        E-mail must be a valid e-mail address.
+                    </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
                     <label for="password" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Type your password here">
+                    <input type="password" class="form-control" id="password" placeholder="Type your password here"
+                    formControlName="password"  [ngClass]="{'is-valid':submitted && !employeeForm.get('password')?.errors, 'is-invalid': submitted && employeeForm.get('password')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('password')?.hasError('required')">
+                        Password is required.
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,13 +52,27 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="age" class="form-label">Age:</label>
-                    <input type="number" class="form-control" id="age" placeholder="Type your age here">
+                    <input type="number" class="form-control" id="age" placeholder="Type your age here"
+                    formControlName="age"  [ngClass]="{'is-valid': submitted && !employeeForm.get('age')?.errors, 'is-invalid': submitted && employeeForm.get('age')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('age')?.hasError('required')">
+                        Age is required.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('age')?.hasError('min')">
+                        Age must be geater than or egal 18.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('age')?.hasError('max')">
+                        Age must be less than or egal 100.
+                    </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
                     <label for="salary" class="form-label">Salary:</label>
-                    <input type="text" class="form-control" id="salary" placeholder="Type your salary here">
+                    <input type="text" class="form-control" id="salary" placeholder="Type your salary here"
+                    formControlName="salary"  [ngClass]="{'is-valid': submitted && !employeeForm.get('salary')?.errors, 'is-invalid': submitted && employeeForm.get('salary')?.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && employeeForm.get('salary')?.hasError('required')">
+                        Salary is required.
+                    </div>
                 </div>
             </div>
         </div>
